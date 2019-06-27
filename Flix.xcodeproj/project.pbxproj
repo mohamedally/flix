@@ -20,6 +20,8 @@
 		867FF44F22C41C5A000E6B12 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 867FF44E22C41C5A000E6B12 /* MoviesViewController.m */; };
 		867FF45522C42DA4000E6B12 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 867FF45422C42DA4000E6B12 /* MovieCell.m */; };
 		867FF45822C43FE7000E6B12 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 867FF45722C43FE7000E6B12 /* DetailsViewController.m */; };
+		867FF45B22C56AA5000E6B12 /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 867FF45A22C56AA5000E6B12 /* MoviesGridViewController.m */; };
+		867FF45E22C56E04000E6B12 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 867FF45D22C56E04000E6B12 /* MovieCollectionCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		867FF45422C42DA4000E6B12 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		867FF45622C43FE7000E6B12 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		867FF45722C43FE7000E6B12 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		867FF45922C56AA5000E6B12 /* MoviesGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesGridViewController.h; sourceTree = "<group>"; };
+		867FF45A22C56AA5000E6B12 /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
+		867FF45C22C56E04000E6B12 /* MovieCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
+		867FF45D22C56E04000E6B12 /* MovieCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionCell.m; sourceTree = "<group>"; };
 		8EC6F7B031069D4213F97C0D /* Pods-Flix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix.debug.xcconfig"; path = "Target Support Files/Pods-Flix/Pods-Flix.debug.xcconfig"; sourceTree = "<group>"; };
 		90648B94B6BB4A4409822F1D /* Pods_FlixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8D4EB7B21E25639D416437 /* Pods-FlixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixUITests.debug.xcconfig"; path = "Target Support Files/Pods-FlixUITests/Pods-FlixUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +192,8 @@
 				867FF44E22C41C5A000E6B12 /* MoviesViewController.m */,
 				867FF45622C43FE7000E6B12 /* DetailsViewController.h */,
 				867FF45722C43FE7000E6B12 /* DetailsViewController.m */,
+				867FF45922C56AA5000E6B12 /* MoviesGridViewController.h */,
+				867FF45A22C56AA5000E6B12 /* MoviesGridViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -195,6 +203,8 @@
 			children = (
 				867FF45322C42DA4000E6B12 /* MovieCell.h */,
 				867FF45422C42DA4000E6B12 /* MovieCell.m */,
+				867FF45C22C56E04000E6B12 /* MovieCollectionCell.h */,
+				867FF45D22C56E04000E6B12 /* MovieCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,8 +439,10 @@
 				867FF42B22C3EF35000E6B12 /* main.m in Sources */,
 				867FF45822C43FE7000E6B12 /* DetailsViewController.m in Sources */,
 				867FF41D22C3EF34000E6B12 /* AppDelegate.m in Sources */,
+				867FF45E22C56E04000E6B12 /* MovieCollectionCell.m in Sources */,
 				867FF45522C42DA4000E6B12 /* MovieCell.m in Sources */,
 				867FF44F22C41C5A000E6B12 /* MoviesViewController.m in Sources */,
+				867FF45B22C56AA5000E6B12 /* MoviesGridViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
