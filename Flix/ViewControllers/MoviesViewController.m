@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 
 @end
 
@@ -35,6 +36,8 @@
 }
 
 -(void) fetchMovies {
+    
+    [self.loadingIndicator startAnimating];
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=2a86b5775a6179b1512a5f4512ff52aa"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
@@ -60,6 +63,7 @@
         }
         
         [self.refreshControl endRefreshing];
+        [self.loadingIndicator stopAnimating];
     }];
     [task resume];
 
