@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UILabel *releaseLabel;
 
 @end
 
@@ -39,6 +40,7 @@
     
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"overview"];
+    self.releaseLabel.text = self.movie[@"release_date"];
     
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
