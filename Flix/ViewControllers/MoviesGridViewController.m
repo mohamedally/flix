@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *superheroLoadIndicator;
 @end
 
 @implementation MoviesGridViewController
@@ -39,12 +39,42 @@
 }
 
 -(void) fetchMovies {
-    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=2a86b5775a6179b1512a5f4512ff52aa"];
+    
+    [self.superheroLoadIndicator startAnimating];
+    // getting movies similar to wonder woman (superhero movies)
+    NSString *wonderWomanId = @"297762";
+    NSString *urlString = [@"https://api.themoviedb.org/3/movie/" stringByAppendingString:wonderWomanId];
+    NSString *fullUrlString = [urlString stringByAppendingString:@"/similar?api_key=2a86b5775a6179b1512a5f4512ff52aa"];
+    NSURL *url = [NSURL URLWithString:fullUrlString];
+    
+    // Network request
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error != nil) {
-            NSLog(@"%@", [error localizedDescription]);
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot get movies" message:@"The internet connection appears to be off" preferredStyle:(UIAlertControllerStyleAlert)];
+            
+            // create a cancel action
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                                     // handle cancel response here. Doing nothing will dismiss the view.
+                                                                 }];
+            // add the cancel action to the alertController
+            [alert addAction:cancelAction];
+            
+            // create an OK action
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action) {
+                                                                 // handle response here.
+                                                             }];
+            // add the OK action to the alert controller
+            [alert addAction:okAction];
+            
+            [self presentViewController:alert animated:YES completion:^{
+                // optional code for what happens after the alert controller has finished presenting
+            }];
         }
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -56,6 +86,8 @@
             // TODO: Store the movies in a property to use elsewhere
             // TODO: Reload your table view data
         }
+        
+        [self.superheroLoadIndicator stopAnimating];
     
     }];
     [task resume];
