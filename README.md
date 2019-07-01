@@ -8,16 +8,16 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is complete:
 
-- [ ] User can view a list of movies currently playing in theaters from The Movie Database.
-- [ ] Poster images are loaded using the UIImageView category in the AFNetworking library.
-- [ ] User sees a loading state while waiting for the movies API.
-- [ ] User can pull to refresh the movie list.
+- [X] User can view a list of movies currently playing in theaters from The Movie Database.
+- [X] Poster images are loaded using the UIImageView category in the AFNetworking library.
+- [X] User sees a loading state while waiting for the movies API.
+- [X] User can pull to refresh the movie list.
 
 The following **optional** features are implemented:
 
-- [ ] User sees an error message when there's a networking error.
-- [ ] Movies are displayed using a CollectionView instead of a TableView.
-- [ ] User can search for a movie.
+- [X] User sees an error message when there's a networking error.
+- [X] Movies are displayed using a CollectionView instead of a TableView.
+- [X] User can search for a movie.
 - [ ] All images fade in as they are loading.
 - [ ] User can view the large movie poster by tapping on a cell.
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
@@ -27,24 +27,26 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [X] Clicking on image poster brings up the youtube trailer!
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. I think a walkthrough in linking view controllers and triggering segues would be awesome
+2. Making a responsive design
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/hfsu8zF6v9.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+- Opening up youtube links was a challenging
+- Working on the search bar was also a really rewarding experience.
 
 ## Credits
 
